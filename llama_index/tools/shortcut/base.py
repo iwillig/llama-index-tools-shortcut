@@ -5,7 +5,8 @@ import os
 
 logger = logging.getLogger(__name__)
 
-env_token = os.getenv("SHORTCUT_API_TOKEN")
+def get_env_token():
+    return os.getenv("SHORTCUT_API_TOKEN")
 
 base_url = "https://api.app.shortcut.com/api/v3"
 
@@ -26,7 +27,7 @@ class ShortcutToolSpec(BaseToolSpec):
 
     def __init__(self, shortcut_token):
         """"""
-        self.shortcut_token = shortcut_token
+        self.shortcut_token = get_env_token()
         super().__init__()
 
     def create_story(self, story_name, workflow_state_id):
