@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "llama-index-tools-shortcut"
+version = "0.0.1"
+description = "A LLama Index tool for creating stories in Shortcut"
+authors = ["Ivan Willig <iwillig@gmail.com>"]
+keywords = ["Shortcut", "llama-index"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+requests = "^2.32.3"
+llama-index-core = "^0.12.10.post1"
+pytest = "^8.2.0"
+
+[tool.llamahub]
+contains_example = false
+import_path = "llama_index.readers.shortcut"
+
+[tool.codespell]
+check-filenames = true
+check-hidden = true
+skip = "*.html,*.json"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+pytest = "^8.3.4"
+
+[tool.poetry.group.dev.dependencies.codespell]
+extras = ["toml"]
+version = ">=v2.2.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.packages]]
+include = "llama_index/"
